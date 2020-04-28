@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
+
+</head>
+<style>
+	body { 
+		color : white;
+		font-family: cursive;
+	}
+	.row {
+		padding-top: 100px;
+	}
+</style>
+<body background="book.jpg">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-4 offset-sm-4">
+						<h4>Add new book</h4>
+						<div style="padding:50px">
+							<form id="addForm">					
+								Book name  : <input type="text" name="bookname"/> <br/><br/>
+								Book author : <input type="text" name="bookauthor"/> <br/><br/>
+								Book price  : <input type="text" name="bookprice"/> <br/><br/>
+								Book Type : <br/><select name="booktype">
+									<option value=""></option>
+									<option value="fantasy">Fantasy</option>
+									<option value="sci-fiction">Sci-Fiction</option>
+									<option value="horror">Horror</option>
+									<option value="general">General</option>
+									<option value="kidsbook">Kids book</option>
+								</select> <br/><br/>
+				
+								<div class="text-center"><button class="btn btn-primary" id="backButton">Back</button><span style="padding-left:20px"></span><button class="btn btn-primary" id="addbutton">Add</button></div>
+				 			</form>
+				 		</div>
+				 
+						
+			</div>
+		</div>
+		
+		
+		</div>
+</body>
+	<script>
+		$(function(){
+				$('#addbutton').click(function(){
+					var form = $('#addForm');
+					var data = {
+							bookname : form.find('input[name="bookname"]').val(),
+							bookauthor: form.find('input[name="bookauthor"]').val(),
+							bookprice : form.find('input[name="bookprice"]').val(),
+							booktype : form.find('select[name="booktype"]').val()
+					};
+								
+					$.post('add', $.param(data), function(response){
+						$('body').append("<h2>Successs</h2>");
+					});
+				});
+		});
+	</script>
+</html>

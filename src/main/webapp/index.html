@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="ISO-8859-1">
+<title>Book Management Index Page</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
+</head>
+<style>
+	.row {
+		padding-top : 100px;
+	}
+	
+	#header, input[type="button"] { 
+		color : white;	
+		font-family : cursive;
+	}
+
+	
+</style>
+<body background="book.jpg">
+		<br/>
+		<div class="container">
+			<h2 class="text-center" id="header">Book Management Application<h2>
+		
+			<div class="row">
+				<div class="col-sm-4 offset-sm-4">
+					<div class="text-center" style="width:400px; padding:20px">
+						<a href="add.html"><img src="book-add-icon.png" style="width:80px"/><input type="button" value="Add New Book" class="btn btn-link btn-lg" id="addbutton"/></a><br/><br/>
+						<a href="view.html"><img src="book-view-icon.png" style="width:80px"/><input type="button" value="View books" class="btn btn-link btn-lg" id="viewbutton"/></a> <br/><br/>
+						<a href="deletebook.html"><img src="book-delete-icon.png" style="width:80px"/><input type="button" value="Delete books" class="btn btn-link btn-lg" id="deletebutton"/></a><br/>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+</body>
+</html>

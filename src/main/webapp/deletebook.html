@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
+
+</head>
+
+<body>
+			Enter book id  : <input type="text" id="deletebookid"/><br/>
+			<button id="deletebookbutton" class=""btn btn-danger">Delete</button>
+			
+</body>
+	<script>
+		$(function(){
+			$('#deletebookbutton').click(function(){
+				console.log("inside func");
+				var id = $('#deletebookid').val();
+				var data = {
+						bookid : id
+				}
+				console.log(id);
+				$.post('deletebook',$.param(data), function(response){
+					$('body').append('<div class="alert alert-success">'+ response +'</div>');
+					
+				})
+			});
+		})
+	</script>
+</html>
